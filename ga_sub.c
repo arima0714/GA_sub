@@ -32,6 +32,7 @@ void init(){
 		
 }
 
+// 遺伝子に内蔵された要素を全て出力する関数
 void print_array(int* array){
 	for(int i = 0; i < NUM_OF_CHROMOSOME; i++){
 		printf(" %d ",array[i]);
@@ -49,6 +50,7 @@ void init_indexes(void){
 	}
 }
 
+// ソートしたい配列そのものを初期化する関数
 void input_root_array(void){
 	root_array[0] = 6;
 	root_array[1] = 5;
