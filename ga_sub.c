@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "ga_sub.h"
 
 #define NUM_OF_GENE 4	// 生存可能な数の上限
 #define NUM_OF_CHROMOSOME 6	// 各遺伝子が保有する染色体の数 // 並び替える値の個数
@@ -13,8 +14,10 @@ int* array_4[NUM_OF_CHROMOSOME];
 
 int root_array[NUM_OF_CHROMOSOME];	// ソートしたい配列
 
+// root_arrayに値を入れる
 // 最初に実行される全ての配列(array_1 ~ _4)にroot_arrayの内容をコピーする
-void init_array(){
+void init(){
+	input_root_array();
 }
 
 void print_array(int* array){
@@ -39,7 +42,8 @@ void input_root_array(void){
 
 int main(void){
 
-	input_root_array();
+	init();
+
 
 	return 0;
 }
