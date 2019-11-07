@@ -4,13 +4,13 @@
 #define NUM_OF_GENE 4	// 生存可能な数の上限
 #define NUM_OF_CHROMOSOME 6	// 各遺伝子が保有する染色体の数 // 並び替える値の個数
 
-int** index_1[NUM_OF_GENE];
-int** index_2[NUM_OF_GENE];
+int index_1[NUM_OF_GENE][NUM_OF_CHROMOSOME];
+int index_2[NUM_OF_GENE][NUM_OF_CHROMOSOME];
 
-int* array_1[NUM_OF_CHROMOSOME];
-int* array_2[NUM_OF_CHROMOSOME];
-int* array_3[NUM_OF_CHROMOSOME];
-int* array_4[NUM_OF_CHROMOSOME];
+int array_1[NUM_OF_CHROMOSOME];
+int array_2[NUM_OF_CHROMOSOME];
+int array_3[NUM_OF_CHROMOSOME];
+int array_4[NUM_OF_CHROMOSOME];
 
 int root_array[NUM_OF_CHROMOSOME];	// ソートしたい配列
 
@@ -18,6 +18,14 @@ int root_array[NUM_OF_CHROMOSOME];	// ソートしたい配列
 // 最初に実行される全ての配列(array_1 ~ _4)にroot_arrayの内容をコピーする
 void init(){
 	input_root_array();
+	init_indexes();
+#ifdef DEBUG
+	for(int i = 0; i < NUM_OF_GENE; i++){
+		printf("index_1[%d]\n", i);
+		print_array(index_1[i]);
+	}
+#endif
+		
 }
 
 void print_array(int* array){
@@ -26,6 +34,15 @@ void print_array(int* array){
 		printf(" %d ",array[i]);
 	}
 	printf("\n");
+}
+
+// インデックスに親配列を全代入する
+void init_indexes(void){
+	for(int i = 0; i < NUM_OF_GENE; i++){
+		for(int j = 0; j < NUM_OF_CHROMOSOME; j++){
+			index_1[i][j] = root_array[j];
+		}
+	}
 }
 
 void input_root_array(void){
