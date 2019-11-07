@@ -11,9 +11,35 @@ int* array_2[NUM_OF_CHROMOSOME];
 int* array_3[NUM_OF_CHROMOSOME];
 int* array_4[NUM_OF_CHROMOSOME];
 
-int* root_array[NUM_OF_CHROMOSOME];	// ソートしたい配列
+int root_array[NUM_OF_CHROMOSOME];	// ソートしたい配列
+
+// 最初に実行される全ての配列(array_1 ~ _4)にroot_arrayの内容をコピーする
+void init_array(){
+}
+
+void print_array(int* array){
+	printf("this array contents are\n");
+	for(int i = 0; i < NUM_OF_CHROMOSOME; i++){
+		printf("array[%d] = %d\n",i, array[i]);
+	}
+}
+
+void input_root_array(void){
+	root_array[0] = 6;
+	root_array[1] = 5;
+	root_array[2] = 4;
+	root_array[3] = 3;
+	root_array[4] = 2;
+	root_array[5] = 1;
+#ifdef DEBUG
+	printf("これは root_array の内部\n");
+	print_array(root_array);
+#endif
+}
 
 int main(void){
+
+	input_root_array();
 
 	return 0;
 }
