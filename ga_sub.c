@@ -23,8 +23,9 @@ void init(){
 void print_array(int* array){
 	printf("this array contents are\n");
 	for(int i = 0; i < NUM_OF_CHROMOSOME; i++){
-		printf("array[%d] = %d\n",i, array[i]);
+		printf(" %d ",array[i]);
 	}
+	printf("\n");
 }
 
 void input_root_array(void){
