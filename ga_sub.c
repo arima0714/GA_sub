@@ -24,12 +24,15 @@ void init(){
 		printf("index_1[%d]\n", i);
 		print_array(index_1[i]);
 	}
+	for(int i = 0; i < NUM_OF_GENE; i++){
+		printf("index_2[%d]\n", i);
+		print_array(index_1[i]);
+	}
 #endif
 		
 }
 
 void print_array(int* array){
-	printf("this array contents are\n");
 	for(int i = 0; i < NUM_OF_CHROMOSOME; i++){
 		printf(" %d ",array[i]);
 	}
@@ -41,6 +44,7 @@ void init_indexes(void){
 	for(int i = 0; i < NUM_OF_GENE; i++){
 		for(int j = 0; j < NUM_OF_CHROMOSOME; j++){
 			index_1[i][j] = root_array[j];
+			index_2[i][j] = root_array[j];
 		}
 	}
 }
