@@ -36,6 +36,19 @@ void calc_fitness(void){
 	}
 }
 
+// 交叉
+void crossing(void){
+	double probability = return_rand(100)/100;
+	if(probability < RAND){
+		int a = return_rand(NUM_OF_CHROMOSOME-1);
+		int b = return_rand(NUM_OF_CHROMOSOME-1);
+		int c = return_rand(NUM_OF_GENE-1);
+		int tmp = index_1[c][a];
+		index_1[c][a] = index_1[c][b];
+		index_1[c][b] = tmp;
+	}
+}
+
 // 選択
 void select(void){
 	index_sort();
