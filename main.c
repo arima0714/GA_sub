@@ -42,6 +42,7 @@ void index_sort_test(void){
 }
 // 置換			TEST
 void swap_content_test(void){
+}
 // テスト全体を実行する
 void test(void){
 }
