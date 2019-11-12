@@ -28,6 +28,20 @@ int return_rand(int num){
 	return s;
 }
 
+// 適応度の計算		TEST
+void calc_fitness_test(void){
+}
+// 交叉			TEST
+void crossing_test(void){
+}
+// 選択			TEST
+void select_test(void)_test{
+}
+// インデックスのソート	TEST
+void index_sort_test(void){
+}
+// 置換			TEST
+void swap_content_test(void){
 
 // 適応度の計算
 void calc_fitness(void){
