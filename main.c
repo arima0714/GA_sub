@@ -55,8 +55,8 @@ void swap_content(int a, int b){
 
 	for(int i = 0; i < NUM_OF_CHROMOSOME+1; i++){
 		tmp[i] = index_1[a][i];
-		index_1[a][j] = index_1[b][j];
-		index_1[b][j] = tmp[j];
+		index_1[a][i] = index_1[b][i];
+		index_1[b][i] = tmp[i];
 	}
 }
 
