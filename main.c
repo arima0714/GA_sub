@@ -46,6 +46,13 @@ void index_sort(void){
 
 // 置換
 void swap_content(int a, int b){
+	int tmp[NUM_OF_CHROMOSOME+1];
+
+	for(int i = 0; i < NUM_OF_CHROMOSOME+1; i++){
+		tmp[i] = index_1[a][i];
+		index_1[a][j] = index_1[b][j];
+		index_1[b][j] = tmp[j];
+	}
 }
 
 // root_arrayに値を入れる
