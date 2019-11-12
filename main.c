@@ -35,7 +35,7 @@ void calc_fitness_test(void){
 void crossing_test(void){
 }
 // 選択			TEST
-void select_test(void)_test{
+void select_test_test(void){
 }
 // インデックスのソート	TEST
 void index_sort_test(void){
