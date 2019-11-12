@@ -3,6 +3,10 @@
 #include <stdlib.h>
 #include <time.h>
 
+#ifdef TEST
+#include "test.h"
+#endif
+
 #define NUM_OF_GENE 4	// 生存可能な数の上限
 #define NUM_OF_CHROMOSOME 6	// 各遺伝子が保有する染色体の数 // 並び替える値の個数
 #define RAND 30		// 突然変異の発生確率(%)
@@ -29,9 +33,9 @@ int return_rand(int num){
 void calc_fitness(void){
 
 	for (int i = 0; i < NUM_OF_GENE; i++){
-		for (int j = 0; j < NUM_OF_CHROMOSOME - 1; i++){
+		for (int j = 0; j < NUM_OF_CHROMOSOME - 1; j++){
 			if(index_1[i][j] <= index_1[i][j+1]){
-				index_1[i][NUM_OF_CHROMOSOME+1] += 1;
+				index_1[i][NUM_OF_CHROMOSOME] += 1;
 			}
 		}
 	}
