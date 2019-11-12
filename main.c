@@ -23,6 +23,19 @@ int return_rand(int num){
 	return s;
 }
 
+
+// 適応度の計算
+void calc_fitness(void){
+
+	for (int i = 0; i < NUM_OF_GENE; i++){
+		for (int j = 0; j < NUM_OF_CHROMOSOME - 1; i++){
+			if(index_1[i][j] <= index_1[i][j+1]){
+				index_1[i][NUM_OF_CHROMOSOME+1] += 1;
+			}
+		}
+	}
+}
+
 // root_arrayに値を入れる
 // 最初に実行される全ての配列(array_1 ~ _4)にroot_arrayの内容をコピーする
 void init(){
