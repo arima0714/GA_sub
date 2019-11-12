@@ -38,6 +38,7 @@ void calc_fitness(void){
 
 // 選択
 void select(void){
+	index_sort();
 }
 
 // インデックスのソート
