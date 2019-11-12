@@ -42,6 +42,9 @@ void index_sort_test(void){
 }
 // 置換			TEST
 void swap_content_test(void){
+// テスト全体を実行する
+void test(void){
+}
 
 // 適応度の計算
 void calc_fitness(void){
@@ -145,11 +148,12 @@ void input_root_array(void){
 
 int main(void){
 
-	init();
-
-#ifdef DEBUG
-	printf("number = %d\n", return_rand(3));
+#ifdef TEST
+	test();
+	return 0;
 #endif
+
+	init();
 
 	return 0;
 }
