@@ -74,8 +74,16 @@ void calc_fitness_test(void){
 	}
 	
 }
+
 // 交叉			TEST
 void crossing_test(void){
+	for(int j = 0 ; j < NUM_OF_GENE; j++){
+		for(int k = 0; k <= NUM_OF_CHROMOSOME; k++){
+			index_1[j][k] = k;
+		}
+	}
+	calc_fitness();
+
 }
 // 選択			TEST
 void select_test_test(void){
