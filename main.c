@@ -39,7 +39,7 @@ void calc_fitness(void){
 
 // 交叉
 void crossing(void){
-	double probability = return_rand(100)/100;
+	double probability = return_rand(100);
 	if(probability < RAND){
 		int a = return_rand(NUM_OF_CHROMOSOME-1);
 		int b = return_rand(NUM_OF_CHROMOSOME-1);
