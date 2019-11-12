@@ -36,6 +36,18 @@ void calc_fitness(void){
 	}
 }
 
+// 選択
+void select(void){
+}
+
+// インデックスのソート
+void index_sort(void){
+}
+
+// 置換
+void swap_content(int a, int b){
+}
+
 // root_arrayに値を入れる
 // 最初に実行される全ての配列(array_1 ~ _4)にroot_arrayの内容をコピーする
 void init(){
