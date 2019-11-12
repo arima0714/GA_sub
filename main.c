@@ -42,6 +42,11 @@ void select(void){
 
 // インデックスのソート
 void index_sort(void){
+	for(int i = 0; i < NUM_OF_GENE -1; i++){
+		for(int j = 0; j < NUM_OF_GENE - i + 1; j++){
+			swap_content(j, j-1);
+		}
+	}
 }
 
 // 置換
