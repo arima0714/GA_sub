@@ -7,7 +7,7 @@ void calc_fitness(void);
 void select(void);
 void index_sort(void);
 void swap_content(int a, int b);
-void crossing(void);
+int crossing(void);
 void calc_fitness_test(void);
 void crossing_test(void);
 void select_test_test(void);

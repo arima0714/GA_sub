@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdbool.h>
 #include "ga_sub.h"
 #include <stdlib.h>
 #include <time.h>
@@ -111,7 +112,8 @@ void calc_fitness(void){
 }
 
 // 交叉
-void crossing(void){
+// 実行した場合はtrue, そうでない場合はfalse
+int crossing(void){
 	double probability = return_rand(100);
 	if(probability < RAND){
 		int a = return_rand(NUM_OF_CHROMOSOME-1);
@@ -120,6 +122,10 @@ void crossing(void){
 		int tmp = index_1[c][a];
 		index_1[c][a] = index_1[c][b];
 		index_1[c][b] = tmp;
+		return true;
+	}
+	else{
+		return false;
 	}
 }
 
