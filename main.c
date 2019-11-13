@@ -101,9 +101,53 @@ void crossing_test(void){
 	}
 
 }
+
 // 選択			TEST
 void select_test_test(void){
+	for(int i = 0; i < NUM_OF_CHROMOSOME; i++){
+		index_1[3][i] = i;
+	}
+	index_1[2][0] = 1;
+	index_1[2][1] = 2;
+	index_1[2][2] = 3;
+	index_1[2][3] = 4;
+	index_1[2][4] = 6;
+	index_1[2][5] = 5;
+
+	index_1[1][0] = 6;
+	index_1[1][1] = 2;
+	index_1[1][2] = 3;
+	index_1[1][3] = 4;
+	index_1[1][4] = 5;
+	index_1[1][5] = 1;
+
+	index_1[0][0] = 1;
+	index_1[0][1] = 2;
+	index_1[0][2] = 6;
+	index_1[0][3] = 5;
+	index_1[0][4] = 4;
+	index_1[0][5] = 3;
+
+	calc_fitness();
+
+	if(index_1[0][NUM_OF_CHROMOSOME] != 5){
+		fprintf(stderr, "index_1[0] is bad \n");
+		exit(1);
+	}
+	if(index_1[1][NUM_OF_CHROMOSOME] != 4){
+		fprintf(stderr, "index_1[1] is bad \n");
+		exit(1);
+	}
+	if(index_1[2][NUM_OF_CHROMOSOME] != 3){
+		fprintf(stderr, "index_1[2] is bad \n");
+		exit(1);
+	}
+	if(index_1[3][NUM_OF_CHROMOSOME] != 2){
+		fprintf(stderr, "index_1[3] is bad \n");
+		exit(1);
+	}
 }
+
 // インデックスのソート	TEST
 void index_sort_test(void){
 }
