@@ -84,6 +84,10 @@ void crossing_test(void){
 		}
 	}
 	calc_fitness();
+	if(crossing(void) == true){
+	}
+	else{
+	}
 
 }
 // 選択			TEST
