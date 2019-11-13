@@ -146,6 +146,12 @@ void index_sort_test(void){
 
 // 置換			TEST
 void swap_content_test(void){
+	for(int i = 0; i < NUM_OF_GENE; i++){
+		for(int j = 0; j < NUM_OF_CHROMOSOME; j++){
+			index_1[i][j] = j;
+		}
+	}
+
 }
 
 // テスト全体を実行する
