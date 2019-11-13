@@ -78,15 +78,26 @@ void calc_fitness_test(void){
 
 // 交叉			TEST
 void crossing_test(void){
+	// インデックスの初期化
+	// 全ての遺伝子で同じ染色体配列を持つ
 	for(int j = 0 ; j < NUM_OF_GENE; j++){
 		for(int k = 0; k <= NUM_OF_CHROMOSOME; k++){
 			index_1[j][k] = k;
 		}
 	}
-	calc_fitness();
-	if(crossing(void) == true){
+	// テストする
+	int tested = crossing();
+	int fitness_sum = 0;
+	for(int i = 0; i < NUM_OF_GENE; i++){
+		fitness_sum += index_1[i][NUM_OF_CHROMOSOME];
 	}
-	else{
+	if( tested == true && fitness_sum == index_1[0][NUM_OF_CHROMOSOME] * (NUM_OF_GENE -1) ){
+		fprintf(stderr, "crossing() is fault \n");
+		exit(1);
+	}
+	else if( tested == false && fitness_sum != index_1[0][NUM_OF_CHROMOSOME] * (NUM_OF_GENE -1)){
+		fprintf(stderr, "crossing() is fault \n");
+		exit(1);
 	}
 
 }
