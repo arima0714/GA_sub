@@ -143,9 +143,11 @@ void select_test_test(void){
 void index_sort_test(void){
 	// 選択のテストと同じため省略
 }
+
 // 置換			TEST
 void swap_content_test(void){
 }
+
 // テスト全体を実行する
 void test(void){
 }
