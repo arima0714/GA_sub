@@ -129,22 +129,13 @@ void select_test_test(void){
 	index_1[0][5] = 3;
 
 	calc_fitness();
+	select();
 
-	if(index_1[0][NUM_OF_CHROMOSOME] != 5){
-		fprintf(stderr, "index_1[0] is bad \n");
-		exit(1);
-	}
-	if(index_1[1][NUM_OF_CHROMOSOME] != 4){
-		fprintf(stderr, "index_1[1] is bad \n");
-		exit(1);
-	}
-	if(index_1[2][NUM_OF_CHROMOSOME] != 3){
-		fprintf(stderr, "index_1[2] is bad \n");
-		exit(1);
-	}
-	if(index_1[3][NUM_OF_CHROMOSOME] != 2){
-		fprintf(stderr, "index_1[3] is bad \n");
-		exit(1);
+	for(int i = 0; i < NUM_OF_GENE-1; i++){
+		if(index_1[i][NUM_OF_CHROMOSOME] < index_1[i+1][NUM_OF_CHROMOSOME]){
+			fprintf(stderr, "select() is bad \n");
+			exit(1);
+		}
 	}
 }
 
