@@ -146,16 +146,25 @@ void index_sort_test(void){
 
 // 置換			TEST
 void swap_content_test(void){
-	for(int i = 0; i < NUM_OF_GENE; i++){
-		for(int j = 0; j < NUM_OF_CHROMOSOME; j++){
-			index_1[i][j] = j;
+	for(int i = 0 ; i < NUM_OF_CHROMOSOME; i++){
+		index_1[0] = i;
+		index_1[1] = NUM_OF_CHROMOSOME -1 -i;
+	}
+	swap_content(0,1);
+	for(int i = 0 ; i < NUM_OF_CHROMOSOME; i++){
+		if(index_1[0] == i && index_1[1] == NUM_OF_CHROMOSOME -1 -i){
+			fprintf(stderr, "select() is bad \n");
+			exit(1);
 		}
 	}
-
 }
 
 // テスト全体を実行する
 void test(void){
+	calc_fitness_test();
+	select_test_test();
+	index_sort_test();
+	swap_content();
 }
 
 // 適応度の計算
