@@ -14,4 +14,5 @@ void select_test_test(void);
 void index_sort_test(void);
 void swap_content_test(void);
 void test(void);
+int init_mutate(void);
 
