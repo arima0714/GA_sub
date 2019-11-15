@@ -27,6 +27,16 @@ int return_rand(int num){
 
 // 交叉		TEST
 void crossing(){
+	int div = NUM_OF_CHROMOSOME;
+
+	for(int i = 0; i < div; i++){
+		index_1[NUM_OF_GENE-2][i] = index_1[0][i];
+		index_1[NUM_OF_GENE-1][i] = index_1[1][i];
+	}
+	for(int j = div +1; j < NUM_OF_CHROMOSOME; j++){
+		index_1[NUM_OF_GENE-2][j] = index_1[1][j];
+		index_1[NUM_OF_GENE-1][j] = index_1[0][j];
+	}
 }
 // 交叉
 void crossing_test(){
