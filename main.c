@@ -223,6 +223,7 @@ void swap_content(int a, int b){
 void init(){
 	input_root_array();
 	init_indexes();
+	init_mutate();
 #ifdef DEBUG
 	for(int i = 0; i < NUM_OF_GENE; i++){
 		printf("index_1[%d]\n", i);
@@ -235,7 +236,6 @@ void init(){
 #endif
 		
 }
-
 
 // 遺伝子に内蔵された要素を全て出力する関数
 void print_array(int* array){
@@ -256,18 +256,13 @@ void init_indexes(void){
 
 // インデックスの要素すべてを突然変異させる関数
 int init_mutate(void){
-	double probability = return_rand(100);
-	if(probability < RAND){
+	for(int i = 0; i < NUM_OF_GENE; i++){
 		int a = return_rand(NUM_OF_CHROMOSOME-1);
 		int b = return_rand(NUM_OF_CHROMOSOME-1);
-		int c = return_rand(NUM_OF_GENE-1);
 		int tmp = index_1[c][a];
-		index_1[c][a] = index_1[c][b];
-		index_1[c][b] = tmp;
+		index_1[i][a] = index_1[i][b];
+		index_1[i][b] = tmp;
 		return true;
-	}
-	else{
-		return false;
 	}
 }
 
