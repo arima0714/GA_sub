@@ -25,6 +25,13 @@ int return_rand(int num){
 	return s;
 }
 
+// 交叉		TEST
+void crossing(){
+}
+// 交叉
+void crossing_test(){
+}
+
 // 適応度の計算		TEST
 void calc_fitness_test(void){
 	for(int i = 0; i < NUM_OF_CHROMOSOME; i++){
