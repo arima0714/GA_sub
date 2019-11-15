@@ -10,6 +10,11 @@
 
 int index_1[NUM_OF_GENE][NUM_OF_CHROMOSOME +1];
 
+int array_1[NUM_OF_CHROMOSOME +1];
+int array_2[NUM_OF_CHROMOSOME +1];
+int array_3[NUM_OF_CHROMOSOME +1];
+int array_4[NUM_OF_CHROMOSOME +1];
+
 int root_array[NUM_OF_CHROMOSOME];	// ソートしたい配列
 
 int return_rand(int num){
@@ -231,6 +236,7 @@ void init(){
 		
 }
 
+
 // 遺伝子に内蔵された要素を全て出力する関数
 void print_array(int* array){
 	for(int i = 0; i < NUM_OF_CHROMOSOME; i++){
@@ -245,6 +251,23 @@ void init_indexes(void){
 		for(int j = 0; j < NUM_OF_CHROMOSOME; j++){
 			index_1[i][j] = root_array[j];
 		}
+	}
+}
+
+// インデックスの要素すべてを突然変異させる関数
+int init_mutate(void){
+	double probability = return_rand(100);
+	if(probability < RAND){
+		int a = return_rand(NUM_OF_CHROMOSOME-1);
+		int b = return_rand(NUM_OF_CHROMOSOME-1);
+		int c = return_rand(NUM_OF_GENE-1);
+		int tmp = index_1[c][a];
+		index_1[c][a] = index_1[c][b];
+		index_1[c][b] = tmp;
+		return true;
+	}
+	else{
+		return false;
 	}
 }
 
