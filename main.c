@@ -9,7 +9,6 @@
 #define RAND 30		// 突然変異の発生確率(%)
 
 int index_1[NUM_OF_GENE][NUM_OF_CHROMOSOME +1];
-int index_2[NUM_OF_GENE][NUM_OF_CHROMOSOME +1];
 
 int array_1[NUM_OF_CHROMOSOME +1];
 int array_2[NUM_OF_CHROMOSOME +1];
@@ -250,7 +249,6 @@ void init_indexes(void){
 	for(int i = 0; i < NUM_OF_GENE; i++){
 		for(int j = 0; j < NUM_OF_CHROMOSOME; j++){
 			index_1[i][j] = root_array[j];
-			index_2[i][j] = root_array[j];
 		}
 	}
 }
