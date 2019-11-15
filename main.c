@@ -4,10 +4,6 @@
 #include <stdlib.h>
 #include <time.h>
 
-#ifdef TEST
-#include "test.h"
-#endif
-
 #define NUM_OF_GENE 4	// 生存可能な数の上限
 #define NUM_OF_CHROMOSOME 6	// 各遺伝子が保有する染色体の数 // 並び替える値の個数
 #define RAND 30		// 突然変異の発生確率(%)
@@ -147,12 +143,12 @@ void index_sort_test(void){
 // 置換			TEST
 void swap_content_test(void){
 	for(int i = 0 ; i < NUM_OF_CHROMOSOME; i++){
-		index_1[0] = i;
-		index_1[1] = NUM_OF_CHROMOSOME -1 -i;
+		index_1[0][i] = i;
+		index_1[1][i] = NUM_OF_CHROMOSOME -1 -i;
 	}
 	swap_content(0,1);
 	for(int i = 0 ; i < NUM_OF_CHROMOSOME; i++){
-		if(index_1[0] == i && index_1[1] == NUM_OF_CHROMOSOME -1 -i){
+		if(index_1[0][i] == i && index_1[1][i] == NUM_OF_CHROMOSOME -1 -i){
 			fprintf(stderr, "select() is bad \n");
 			exit(1);
 		}
@@ -164,7 +160,7 @@ void test(void){
 	calc_fitness_test();
 	select_test_test();
 	index_sort_test();
-	swap_content();
+	swap_content_test();
 }
 
 // 適応度の計算
@@ -206,7 +202,8 @@ void select(void){
 void index_sort(void){
 	for(int i = 0; i < NUM_OF_GENE -1; i++){
 		for(int j = 0; j < NUM_OF_GENE - i + 1; j++){
-			swap_content(j, j-1);
+			if(index_1[j][NUM_OF_CHROMOSOME] > index_1[j-1][NUM_OF_CHROMOSOME])
+				swap_content(j, j-1);
 		}
 	}
 }
