@@ -259,7 +259,7 @@ int init_mutate(void){
 	for(int i = 0; i < NUM_OF_GENE; i++){
 		int a = return_rand(NUM_OF_CHROMOSOME-1);
 		int b = return_rand(NUM_OF_CHROMOSOME-1);
-		int tmp = index_1[c][a];
+		int tmp = index_1[i][a];
 		index_1[i][a] = index_1[i][b];
 		index_1[i][b] = tmp;
 		return true;
