@@ -72,8 +72,8 @@ void calc_fitness_test(void){
 	
 }
 
-// 交叉			TEST
-void crossing_test(void){
+// 突然変異			TEST
+void mutating_test(void){
 	// インデックスの初期化
 	// 全ての遺伝子で同じ染色体配列を持つ
 	for(int j = 0 ; j < NUM_OF_GENE; j++){
@@ -82,17 +82,17 @@ void crossing_test(void){
 		}
 	}
 	// テストする
-	int tested = crossing();
+	int tested = mutating();
 	int fitness_sum = 0;
 	for(int i = 0; i < NUM_OF_GENE; i++){
 		fitness_sum += index_1[i][NUM_OF_CHROMOSOME];
 	}
 	if( tested == true && fitness_sum == index_1[0][NUM_OF_CHROMOSOME] * (NUM_OF_GENE -1) ){
-		fprintf(stderr, "crossing() is fault \n");
+		fprintf(stderr, "mutating() is fault \n");
 		exit(1);
 	}
 	else if( tested == false && fitness_sum != index_1[0][NUM_OF_CHROMOSOME] * (NUM_OF_GENE -1)){
-		fprintf(stderr, "crossing() is fault \n");
+		fprintf(stderr, "mutating() is fault \n");
 		exit(1);
 	}
 
@@ -175,9 +175,9 @@ void calc_fitness(void){
 	}
 }
 
-// 交叉
+// 突然変異
 // 実行した場合はtrue, そうでない場合はfalse
-int crossing(void){
+int mutating(void){
 	double probability = return_rand(100);
 	if(probability < RAND){
 		int a = return_rand(NUM_OF_CHROMOSOME-1);
@@ -287,8 +287,15 @@ int main(void){
 	test();
 	return 0;
 #endif
+	 int n = 0;
 
 	init();
+
+	for(; n < GENERATION; n++){
+		calc_fitness();
+		select();
+		mutating();
+	}
 
 	return 0;
 }
