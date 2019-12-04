@@ -36,6 +36,7 @@ void crossing(){
 	// int fix = alpha[x]
 	// while (fix != beta[x]){
 	// 	beta[x] == alpha[y] となる y を探す
+	// 	***** 下記のget_index(int num)を使用する*****
 	// 	alpha'[y] = alpha[y]
 	// 	beta'[y] = beta[y]
 	// 	x = y
@@ -44,6 +45,14 @@ void crossing(){
 }
 // 交叉
 void crossing_test(){
+}
+
+int get_index(int num){
+	// for(i = 0, i < len(alpha[]), i++){
+	// 	if( alpha[i] == num)
+	// 		return i
+	// }
+	return 0;
 }
 
 // 適応度の計算		TEST
