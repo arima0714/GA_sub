@@ -29,14 +29,18 @@ int return_rand(int num){
 void crossing(){
 	int div = NUM_OF_CHROMOSOME;
 
-	for(int i = 0; i < div; i++){
-		index_1[NUM_OF_GENE-2][i] = index_1[0][i];
-		index_1[NUM_OF_GENE-1][i] = index_1[1][i];
-	}
-	for(int j = div +1; j < NUM_OF_CHROMOSOME; j++){
-		index_1[NUM_OF_GENE-2][j] = index_1[1][j];
-		index_1[NUM_OF_GENE-1][j] = index_1[0][j];
-	}
+	// 位置をランダムに決める
+	// alpha', beta' に beta, alpha の内容をコピーする
+	// alpha'[x] = alpha[x]
+	// beta'[x] = beta[x]
+	// int fix = alpha[x]
+	// while (fix != beta[x]){
+	// 	beta[x] == alpha[y] となる y を探す
+	// 	alpha'[y] = alpha[y]
+	// 	beta'[y] = beta[y]
+	// 	x = y
+	// }
+	//
 }
 // 交叉
 void crossing_test(){
