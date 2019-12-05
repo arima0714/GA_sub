@@ -68,6 +68,9 @@ int get_index(int num){
 	return 0;
 }
 
+void get_index_test(){
+}
+
 // 適応度の計算		TEST
 void calc_fitness_test(void){
 	for(int i = 0; i < NUM_OF_CHROMOSOME; i++){
