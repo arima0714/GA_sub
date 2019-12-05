@@ -242,12 +242,25 @@ void swap_content_test(void){
 
 // テスト全体を実行する
 void test(void){
+	printf("start calc_fitness_test()..... ");
 	calc_fitness_test();
+	printf("finished\n");
+	printf("start calc_fitness_test()..... ");
 	crossing_test();
+	printf("finished\n");
+	printf("start crossing_test()..... ");
 	xselect_test();
+	printf("finished\n");
+	printf("start xselect_test()..... ");
 	index_sort_test();
+	printf("finished\n");
+	printf("start index_sort_test()..... ");
 	swap_content_test();
+	printf("finished\n");
+	printf("start swap_content_test()..... ");
 	get_index_test();
+	printf("finished\n");
+	printf("start get_index_test()..... ");
 }
 
 // 適応度の計算
