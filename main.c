@@ -100,6 +100,14 @@ int get_index(int num){
 }
 
 void get_index_test(){
+	for(int i = 0 ; i < NUM_OF_CHROMOSOME ; i++){
+		index_1[0][i] = i;
+	}
+	for(int i = 0 ; i < NUM_OF_CHROMOSOME ; i++){
+		if(index_1[0][i] != get_index(i)){
+			fprintf(stderr, "crossing_test() is bad \n");
+		}
+	}
 }
 
 // 適応度の計算		TEST
