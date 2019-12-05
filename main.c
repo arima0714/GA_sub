@@ -56,7 +56,12 @@ void crossing(){
 		pos = y;
 	}
 	// ***** alpha, beta を子の位置に再配置する必要がある *****
+	for(int i = 0 ; i < NUM_OF_CHROMOSOME ; i++){
+		index_1[NUM_OF_GENE -1][i] = alpha[i];
+		index_1[NUM_OF_GENE -2][i] = beta[i];
+	}
 }
+
 // 交叉
 void crossing_test(){
 }
