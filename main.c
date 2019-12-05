@@ -405,9 +405,7 @@ int main(void){
 		crossing();
 		mutating();
 	}
-
-	// 結果を出力する前に並び替え
-	xselect();
+	
 	// 結果を出力
 	printf("result = ");
 	for(int i = 0; i < NUM_OF_CHROMOSOME; i++){
