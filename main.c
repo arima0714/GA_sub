@@ -81,7 +81,7 @@ void crossing_test(){
 		alpha_after += index_1[NUM_OF_GENE-2][i];
 		beta_after += index_1[NUM_OF_GENE-1][i];
 	}
-	if(alpha_before != beta_before != alpha_after != beta_after)
+	if(alpha_before != beta_before && beta_before != alpha_after && alpha_after != beta_after)
 		fprintf(stderr, "crossing_test() is bad \n");
 }
 
