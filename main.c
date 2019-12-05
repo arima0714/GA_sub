@@ -245,7 +245,7 @@ void test(void){
 	printf("start calc_fitness_test()..... ");
 	calc_fitness_test();
 	printf("finished\n");
-	printf("start calc_fitness_test()..... ");
+	printf("start crossing_test()..... ");
 	crossing_test();
 	printf("finished\n");
 	printf("start crossing_test()..... ");
