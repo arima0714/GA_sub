@@ -359,9 +359,15 @@ int init_mutate(void){
 	for(int i = 0; i < NUM_OF_GENE; i++){
 		a = return_rand(NUM_OF_CHROMOSOME)-1;
 		b = return_rand(NUM_OF_CHROMOSOME)-1;
+#ifdef DEBUG
+		printf("before index_1[%d][%d] = %d, index_1[%d][%d] = %d\n",i,a,index_1[i][a], i,b,index_1[i][b]);
+#endif
 		tmp = index_1[i][a];
 		index_1[i][a] = index_1[i][b];
 		index_1[i][b] = tmp;
+#ifdef DEBUG
+		printf("after  index_1[%d][%d] = %d, index_1[%d][%d] = %d\n",i,a,index_1[i][a], i,b,index_1[i][b]);
+#endif
 	}
 
 #ifdef DEBUG
@@ -386,6 +392,12 @@ void input_root_array(void){
 }
 
 int main(void){
+#ifdef RAND
+	for(int i = 0 ; i < 10 ; i++){
+		printf("rand = %d\n", return_rand(NUM_OF_CHROMOSOME)-1);
+	}
+	return 0;
+#endif
 
 #ifdef TEST
 	test();
