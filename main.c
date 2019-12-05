@@ -245,23 +245,27 @@ void test(void){
 	printf("start calc_fitness_test()..... ");
 	calc_fitness_test();
 	printf("finished\n");
+
 	printf("start crossing_test()..... ");
 	crossing_test();
 	printf("finished\n");
-	printf("start crossing_test()..... ");
+
+	printf("start xselect_test()..... ");
 	xselect_test();
 	printf("finished\n");
-	printf("start xselect_test()..... ");
+
+	printf("start index_sort_test()..... ");
 	index_sort_test();
 	printf("finished\n");
-	printf("start index_sort_test()..... ");
+
+	printf("start swap_content_test()..... ");
 	swap_content_test();
 	printf("finished\n");
-	printf("start swap_content_test()..... ");
+
+	printf("start get_index_test()..... ");
 	get_index_test();
 	printf("finished\n");
-	printf("start get_index_test()..... ");
-	printf("finished\n");
+
 	
 	printf("\n\nall tests are finished\n\n");
 }
