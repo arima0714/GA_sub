@@ -353,10 +353,13 @@ void init_indexes(void){
 
 // インデックスの要素すべてを突然変異させる関数
 int init_mutate(void){
+	int a;
+	int b;
+	int tmp;
 	for(int i = 0; i < NUM_OF_GENE; i++){
-		int a = return_rand(NUM_OF_CHROMOSOME-1);
-		int b = return_rand(NUM_OF_CHROMOSOME-1);
-		int tmp = index_1[i][a];
+		a = return_rand(NUM_OF_CHROMOSOME)-1;
+		b = return_rand(NUM_OF_CHROMOSOME)-1;
+		tmp = index_1[i][a];
 		index_1[i][a] = index_1[i][b];
 		index_1[i][b] = tmp;
 	}
