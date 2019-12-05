@@ -136,7 +136,7 @@ void mutating_test(void){
 }
 
 // 選択			TEST
-void select_test_test(void){
+void xselect_test(void){
 	for(int i = 0; i < NUM_OF_CHROMOSOME; i++){
 		index_1[3][i] = i;
 	}
@@ -162,11 +162,11 @@ void select_test_test(void){
 	index_1[0][5] = 3;
 
 	calc_fitness();
-	select();
+	xselect();
 
 	for(int i = 0; i < NUM_OF_GENE-1; i++){
 		if(index_1[i][NUM_OF_CHROMOSOME] < index_1[i+1][NUM_OF_CHROMOSOME]){
-			fprintf(stderr, "select() is bad \n");
+			fprintf(stderr, "xselect() is bad \n");
 			exit(1);
 		}
 	}
@@ -186,7 +186,7 @@ void swap_content_test(void){
 	swap_content(0,1);
 	for(int i = 0 ; i < NUM_OF_CHROMOSOME; i++){
 		if(index_1[0][i] == i && index_1[1][i] == NUM_OF_CHROMOSOME -1 -i){
-			fprintf(stderr, "select() is bad \n");
+			fprintf(stderr, "xselect() is bad \n");
 			exit(1);
 		}
 	}
@@ -195,7 +195,7 @@ void swap_content_test(void){
 // テスト全体を実行する
 void test(void){
 	calc_fitness_test();
-	select_test_test();
+	xselect_test();
 	index_sort_test();
 	swap_content_test();
 }
@@ -231,7 +231,7 @@ int mutating(void){
 }
 
 // 選択
-void select(void){
+void xselect(void){
 	index_sort();
 }
 
@@ -330,7 +330,7 @@ int main(void){
 
 	for(; n < GENERATION; n++){
 		calc_fitness();
-		select();
+		xselect();
 		mutating();
 	}
 
