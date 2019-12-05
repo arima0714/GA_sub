@@ -27,11 +27,18 @@ int return_rand(int num){
 
 // 交叉		TEST
 void crossing(){
-	int div = NUM_OF_CHROMOSOME;
-
 	// 位置をランダムに決める
+	int pos = return_rand(NUM_OF_CHROMOSOME);
 	// alpha', beta' に beta, alpha の内容をコピーする
+	int alpha[NUM_OF_CHROMOSOME];
+	int beta[NUM_OF_CHROMOSOME];
+	for(int i = 0 ; i < NUM_OF_CHROMOSOME; i++){
+		alpha[i] = index_1[0][i];
+		beta[i] = index_1[1][i];
+	}
 	// alpha'[x] = alpha[x]
+	alpha[pos] = index_1[0][pos];
+	beta[pos] = index_1[1][pos];
 	// beta'[x] = beta[x]
 	// int fix = alpha[x]
 	// while (fix != beta[x]){
