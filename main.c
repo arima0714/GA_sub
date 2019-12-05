@@ -360,6 +360,16 @@ int init_mutate(void){
 		index_1[i][a] = index_1[i][b];
 		index_1[i][b] = tmp;
 	}
+
+#ifdef DEBUG
+	for(int i = 0 ; i < NUM_OF_GENE ; i++){
+		printf("index_1[%d][] = ", i);
+		for(int j = 0 ; j < NUM_OF_CHROMOSOME ; j++){
+			printf(" %d ", index_1[i][j]);
+		}
+		printf(" \n");
+	}
+#endif
 }
 
 // ソートしたい配列そのものを初期化する関数
