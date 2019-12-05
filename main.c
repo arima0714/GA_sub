@@ -55,6 +55,7 @@ void crossing(){
 		beta[y] = index_1[1][y];
 		pos = y;
 	}
+	// ***** alpha, beta を子の位置に再配置する必要がある *****
 }
 // 交叉
 void crossing_test(){
