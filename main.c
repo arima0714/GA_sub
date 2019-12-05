@@ -38,9 +38,10 @@ void crossing(){
 	}
 	// alpha'[x] = alpha[x]
 	alpha[pos] = index_1[0][pos];
-	beta[pos] = index_1[1][pos];
 	// beta'[x] = beta[x]
+	beta[pos] = index_1[1][pos];
 	// int fix = alpha[x]
+	int fix = index_1[0][pos];
 	// while (fix != beta[x]){
 	// 	beta[x] == alpha[y] となる y を探す
 	// 	***** 下記のget_index(int num)を使用する*****
@@ -48,7 +49,12 @@ void crossing(){
 	// 	beta'[y] = beta[y]
 	// 	x = y
 	// }
-	//
+	while(fix != index_1[1][pos]){
+		int y = get_index(index_1[1][pos]);
+		alpha[y] = index_1[0][y];
+		beta[y] = index_1[1][y];
+		pos = y;
+	}
 }
 // 交叉
 void crossing_test(){
