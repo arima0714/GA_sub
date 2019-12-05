@@ -370,9 +370,7 @@ int init_mutate(void){
 		int tmp = index_1[i][a];
 		index_1[i][a] = index_1[i][b];
 		index_1[i][b] = tmp;
-		return true;
 	}
-	return false;
 }
 
 // ソートしたい配列そのものを初期化する関数
@@ -404,14 +402,16 @@ int main(void){
 		xselect();
 		crossing();
 		mutating();
+
+		// 結果を出力
+		printf("n = %d\n", n);
+		printf("result = ");
+		for(int i = 0; i < NUM_OF_CHROMOSOME; i++){
+			printf(" %d ", index_1[0][i]);
+		}
+		printf("\n");
 	}
 	
-	// 結果を出力
-	printf("result = ");
-	for(int i = 0; i < NUM_OF_CHROMOSOME; i++){
-		printf(" %d ", index_1[0][i]);
-	}
-	printf("\n");
 
 	return 0;
 }
