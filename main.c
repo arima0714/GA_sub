@@ -402,6 +402,7 @@ int main(void){
 	for(; n < GENERATION; n++){
 		calc_fitness();
 		xselect();
+		crossing();
 		mutating();
 	}
 
