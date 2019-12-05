@@ -55,10 +55,16 @@ void crossing_test(){
 }
 
 int get_index(int num){
+	// 引数numとして与えられた値と同じものを持つindex値を返す
 	// for(i = 0, i < len(alpha[]), i++){
 	// 	if( alpha[i] == num)
 	// 		return i
 	// }
+	for ( int i = 0; i < NUM_OF_CHROMOSOME; i++){
+		if( index_1[0][i] == num){
+			return i;
+		}
+	}
 	return 0;
 }
 
