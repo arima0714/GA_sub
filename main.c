@@ -28,7 +28,10 @@ int return_rand(int num){
 // 交叉		TEST
 void crossing(){
 	// 位置をランダムに決める
-	int pos = return_rand(NUM_OF_CHROMOSOME);
+	int pos = return_rand(NUM_OF_CHROMOSOME)-1;
+#ifdef TEST
+	printf("pos(位置) = %d\n", pos);
+#endif
 	// alpha', beta' に beta, alpha の内容をコピーする
 	int alpha[NUM_OF_CHROMOSOME];
 	int beta[NUM_OF_CHROMOSOME];
