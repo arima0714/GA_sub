@@ -15,4 +15,5 @@ void index_sort_test(void);
 void swap_content_test(void);
 void test(void);
 int init_mutate(void);
+int get_index(int num);
 
