@@ -311,6 +311,7 @@ int init_mutate(void){
 		index_1[i][b] = tmp;
 		return true;
 	}
+	return false;
 }
 
 // ソートしたい配列そのものを初期化する関数
