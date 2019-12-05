@@ -19,6 +19,7 @@ int array_4[NUM_OF_CHROMOSOME +1];
 int root_array[NUM_OF_CHROMOSOME];	// ソートしたい配列
 
 int return_rand(int num){
+	// 実行時期が限りなく近いときに返値がバラバラにする必要がある
 	int s;
 	srand(time(NULL));
 	s = rand() % num + 1;
