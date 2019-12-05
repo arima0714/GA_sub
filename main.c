@@ -332,17 +332,6 @@ void init(){
 	input_root_array();
 	init_indexes();
 	init_mutate();
-#ifdef DEBUG
-	for(int i = 0; i < NUM_OF_GENE; i++){
-		printf("index_1[%d]\n", i);
-		print_array(index_1[i]);
-	}
-	for(int i = 0; i < NUM_OF_GENE; i++){
-		printf("index_2[%d]\n", i);
-		print_array(index_1[i]);
-	}
-#endif
-		
 }
 
 // 遺伝子に内蔵された要素を全て出力する関数
@@ -381,10 +370,6 @@ void input_root_array(void){
 	root_array[3] = 3;
 	root_array[4] = 2;
 	root_array[5] = 1;
-#ifdef DEBUG
-	printf("これは root_array の内部\n");
-	print_array(root_array);
-#endif
 }
 
 int main(void){
