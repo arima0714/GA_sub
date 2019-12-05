@@ -64,6 +64,25 @@ void crossing(){
 
 // 交叉
 void crossing_test(){
+	int alpha_before = 0;
+	int beta_before = 0;
+	int alpha_after = 0;
+	int beta_after = 0;
+	for(int i = 0; i < NUM_OF_CHROMOSOME; i++){
+		index_1[0][i] = i;
+		index_1[1][i] = NUM_OF_CHROMOSOME-1-i;
+		index_1[NUM_OF_GENE-1][i] = 0;
+		index_1[NUM_OF_GENE-2][i] = 0;
+	}
+	crossing();
+	for(int i = 0 ; i < NUM_OF_CHROMOSOME ; i++){
+		alpha_before += index_1[0][i];
+		beta_before += index_1[1][i];
+		alpha_after += index_1[NUM_OF_GENE-2][i];
+		beta_after += index_1[NUM_OF_GENE-1][i];
+	}
+	if(alpha_before != beta_before != alpha_after != beta_after)
+		fprintf(stderr, "crossing_test() is bad \n");
 }
 
 int get_index(int num){
