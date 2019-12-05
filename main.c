@@ -243,9 +243,11 @@ void swap_content_test(void){
 // テスト全体を実行する
 void test(void){
 	calc_fitness_test();
+	crossing_test();
 	xselect_test();
 	index_sort_test();
 	swap_content_test();
+	get_index_test();
 }
 
 // 適応度の計算
