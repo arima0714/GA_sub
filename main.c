@@ -392,12 +392,6 @@ void input_root_array(void){
 }
 
 int main(void){
-#ifdef RAND
-	for(int i = 0 ; i < 10 ; i++){
-		printf("rand = %d\n", return_rand(NUM_OF_CHROMOSOME)-1);
-	}
-	return 0;
-#endif
 
 #ifdef TEST
 	test();
