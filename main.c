@@ -261,6 +261,7 @@ void test(void){
 	get_index_test();
 	printf("finished\n");
 	printf("start get_index_test()..... ");
+	printf("finished\n");
 }
 
 // 適応度の計算
