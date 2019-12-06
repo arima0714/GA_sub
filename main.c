@@ -354,12 +354,14 @@ void init_indexes(void){
 
 // インデックスの要素すべてを突然変異させる関数
 int init_mutate(void){
-	int a;
-	int b;
-	int tmp;
+	int a = 0;
+	int b = 0;
+	int tmp = 0;
 	for(int i = 0; i < NUM_OF_GENE; i++){
-		a = return_rand(NUM_OF_CHROMOSOME)-1;
-		b = return_rand(NUM_OF_CHROMOSOME)-1;
+		while(a == b){
+			a = return_rand(NUM_OF_CHROMOSOME)-1;
+			b = return_rand(NUM_OF_CHROMOSOME)-1;
+		}
 #ifdef DEBUG
 		printf("before index_1[%d][%d] = %d, index_1[%d][%d] = %d\n",i,a,index_1[i][a], i,b,index_1[i][b]);
 #endif
