@@ -7,7 +7,7 @@
 #define NUM_OF_GENE 4	// 生存可能な数の上限
 #define NUM_OF_CHROMOSOME 6	// 各遺伝子が保有する染色体の数 // 並び替える値の個数
 #define RAND 70		// 突然変異の発生確率(%)
-#define GENERATION 1000000// 世代交代の上限値
+#define GENERATION 100000 // 世代交代の上限値
 
 int index_1[NUM_OF_GENE][NUM_OF_CHROMOSOME +1];
 
