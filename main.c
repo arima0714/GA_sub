@@ -29,7 +29,7 @@ int return_rand(int num){
 // 交叉		TEST
 void crossing(){
 	// 位置をランダムに決める
-	int pos = return_rand(NUM_OF_CHROMOSOME)-1;
+	int pos = return_rand(NUM_OF_CHROMOSOME);
 	// alpha', beta' に beta, alpha の内容をコピーする
 	int alpha[NUM_OF_CHROMOSOME];
 	int beta[NUM_OF_CHROMOSOME];
@@ -288,9 +288,9 @@ void calc_fitness(void){
 int mutating(void){
 	double probability = return_rand(100);
 	if(probability < RAND){
-		int a = return_rand(NUM_OF_CHROMOSOME-1);
-		int b = return_rand(NUM_OF_CHROMOSOME-1);
-		int c = return_rand(NUM_OF_GENE-1);
+		int a = return_rand(NUM_OF_CHROMOSOME);
+		int b = return_rand(NUM_OF_CHROMOSOME);
+		int c = return_rand(NUM_OF_GENE);
 		int tmp = index_1[c][a];
 #ifdef DEBUG
 		printf("before mutate index_1[%d] = ",c);
@@ -374,8 +374,8 @@ int init_mutate(void){
 	int tmp = 0;
 	for(int i = 0; i < NUM_OF_GENE; i++){
 		while(a == b){
-			a = return_rand(NUM_OF_CHROMOSOME-1);
-			b = return_rand(NUM_OF_CHROMOSOME-1);
+			a = return_rand(NUM_OF_CHROMOSOME);
+			b = return_rand(NUM_OF_CHROMOSOME);
 		}
 #ifdef DEBUG
 		printf("before index_1[%d][%d] = %d, index_1[%d][%d] = %d\n",i,a,index_1[i][a], i,b,index_1[i][b]);
