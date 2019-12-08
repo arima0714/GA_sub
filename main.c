@@ -277,7 +277,7 @@ void calc_fitness(void){
 	for (int i = 0; i < NUM_OF_GENE; i++){
 		for (int j = 0; j < NUM_OF_CHROMOSOME - 1; j++){
 			if(index_1[i][j] <= index_1[i][j+1]){
-				index_1[i][NUM_OF_CHROMOSOME] += 1;
+				index_1[i][NUM_OF_CHROMOSOME] += 1+j;
 			}
 		}
 	}
