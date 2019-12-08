@@ -23,7 +23,7 @@ static unsigned long int next = 1;
 int return_rand(int num){
 	// 実行時期が限りなく近いときに返値がバラバラにする必要がある
 	next = next *1103515245+12345;
-	return (unsigned int)(next / 65536) % 32768 % num +1;
+	return (unsigned int)(next / 65536) % 32768 % num;
 }
 
 // 交叉		TEST
@@ -374,8 +374,8 @@ int init_mutate(void){
 	int tmp = 0;
 	for(int i = 0; i < NUM_OF_GENE; i++){
 		while(a == b){
-			a = return_rand(NUM_OF_CHROMOSOME)-1;
-			b = return_rand(NUM_OF_CHROMOSOME)-1;
+			a = return_rand(NUM_OF_CHROMOSOME-1);
+			b = return_rand(NUM_OF_CHROMOSOME-1);
 		}
 #ifdef DEBUG
 		printf("before index_1[%d][%d] = %d, index_1[%d][%d] = %d\n",i,a,index_1[i][a], i,b,index_1[i][b]);
@@ -419,9 +419,11 @@ int main(void){
 
 	init();
 
-		for(int i = 0; i < NUM_OF_CHROMOSOME; i++){
-			printf(" %d ", index_1[0][i]);
-		}
+	printf("before = ");
+	for(int i = 0; i < NUM_OF_CHROMOSOME; i++){
+		printf(" %d ", index_1[0][i]);
+	}
+	printf("\n");
 
 	for(; n < GENERATION; n++){
 		calc_fitness();
@@ -440,9 +442,11 @@ int main(void){
 #endif
 	}
 	
-		for(int i = 0; i < NUM_OF_CHROMOSOME; i++){
-			printf(" %d ", index_1[0][i]);
-		}
+	printf("before =");
+	for(int i = 0; i < NUM_OF_CHROMOSOME; i++){
+		printf(" %d ", index_1[0][i]);
+	}
+	printf("\n");
 
 	return 0;
 }
