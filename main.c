@@ -415,9 +415,13 @@ int main(void){
 	test();
 	return 0;
 #endif
-	 int n = 0;
+	int n = 0;
 
 	init();
+
+		for(int i = 0; i < NUM_OF_CHROMOSOME; i++){
+			printf(" %d ", index_1[0][i]);
+		}
 
 	for(; n < GENERATION; n++){
 		calc_fitness();
@@ -425,6 +429,7 @@ int main(void){
 		crossing();
 		mutating();
 
+#ifndef DEMO
 		// 結果を出力
 		printf("n = %d\n", n);
 		printf("result = ");
@@ -432,8 +437,12 @@ int main(void){
 			printf(" %d ", index_1[0][i]);
 		}
 		printf("\n");
+#endif
 	}
 	
+		for(int i = 0; i < NUM_OF_CHROMOSOME; i++){
+			printf(" %d ", index_1[0][i]);
+		}
 
 	return 0;
 }
