@@ -431,7 +431,7 @@ int main(int argc, char *argv[]){
 	}
 	printf("\n");
 
-	for(; n < GENERATION; n++){
+	for(; n < GEN; n++){
 		calc_fitness();
 		xselect();
 		crossing();
