@@ -9,6 +9,8 @@
 #define RAND 70		// 突然変異の発生確率(%)
 #define GENERATION 10000000// 世代交代の上限値
 
+int GEN = 0;
+
 int index_1[NUM_OF_GENE][NUM_OF_CHROMOSOME +1];
 
 int array_1[NUM_OF_CHROMOSOME +1];
@@ -411,7 +413,7 @@ void input_root_array(void){
 	root_array[5] = 1;
 }
 
-int main(void){
+int main(int argc, char *argv[]){
 
 #ifdef TEST
 	test();
