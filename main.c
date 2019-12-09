@@ -403,6 +403,7 @@ int main(int argc, char *argv[]){
 #endif
 	int n = 0;
 	printf("世代数を入力してください >> ");
+	fflush(stdout);
 	scanf("%d", &GEN);
 	
 	init();
