@@ -420,7 +420,9 @@ int main(int argc, char *argv[]){
 	return 0;
 #endif
 	int n = 0;
-
+	printf("世代数を入力してください >> ");
+	scanf("%d", &GEN);
+	
 	init();
 
 	printf("before =");
