@@ -4,10 +4,10 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define NUM_OF_GENE 4	// 生存可能な数の上限
+#define NUM_OF_GENE 4		// 生存可能な数の上限
 #define NUM_OF_CHROMOSOME 6	// 各遺伝子が保有する染色体の数 // 並び替える値の個数
-#define RAND 70		// 突然変異の発生確率(%)
-#define GENERATION 10000000// 世代交代の上限値
+#define RAND 70			// 突然変異の発生確率(%)
+#define GENERATION 10000000	// 世代交代の上限値
 
 int GEN = 0;
 
@@ -23,35 +23,22 @@ int root_array[NUM_OF_CHROMOSOME];	// ソートしたい配列
 static unsigned long int next = 1;
 
 int return_rand(int num){
-	// 実行時期が限りなく近いときに返値がバラバラにする必要がある
 	next = next *1103515245+12345;
 	return (unsigned int)(next / 65536) % 32768 % num;
 }
 
 // 交叉		TEST
 void crossing(){
-	// 位置をランダムに決める
 	int pos = return_rand(NUM_OF_CHROMOSOME);
-	// alpha', beta' に beta, alpha の内容をコピーする
 	int alpha[NUM_OF_CHROMOSOME];
 	int beta[NUM_OF_CHROMOSOME];
 	for(int i = 0 ; i < NUM_OF_CHROMOSOME; i++){
 		alpha[i] = index_1[0][i];
 		beta[i] = index_1[1][i];
 	}
-	// alpha'[x] = alpha[x]
 	alpha[pos] = index_1[0][pos];
-	// beta'[x] = beta[x]
 	beta[pos] = index_1[1][pos];
-	// int fix = alpha[x]
 	int fix = index_1[0][pos];
-	// while (fix != beta[x]){
-	// 	beta[x] == alpha[y] となる y を探す
-	// 	***** 下記のget_index(int num)を使用する*****
-	// 	alpha'[y] = alpha[y]
-	// 	beta'[y] = beta[y]
-	// 	x = y
-	// }
 	while(fix != index_1[1][pos]){
 		int y = get_index(index_1[1][pos]);
 		alpha[y] = index_1[0][y];
