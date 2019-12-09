@@ -397,6 +397,8 @@ int init_mutate(void){
 		printf(" \n");
 	}
 #endif
+	a = 0;
+	b = 0;
 }
 
 // ソートしたい配列そのものを初期化する関数
