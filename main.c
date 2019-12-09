@@ -386,6 +386,8 @@ int init_mutate(void){
 #ifdef DEBUG
 		printf("after  index_1[%d][%d] = %d, index_1[%d][%d] = %d\n",i,a,index_1[i][a], i,b,index_1[i][b]);
 #endif
+		a = 0;
+		b = 0;
 	}
 
 #ifdef DEBUG
@@ -397,8 +399,6 @@ int init_mutate(void){
 		printf(" \n");
 	}
 #endif
-	a = 0;
-	b = 0;
 }
 
 // ソートしたい配列そのものを初期化する関数
