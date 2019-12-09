@@ -421,7 +421,7 @@ int main(void){
 
 	init();
 
-	printf("before = ");
+	printf("before =");
 	for(int i = 0; i < NUM_OF_CHROMOSOME; i++){
 		printf(" %d ", index_1[0][i]);
 	}
@@ -444,7 +444,7 @@ int main(void){
 #endif
 	}
 	
-	printf("before =");
+	printf("after  =");
 	for(int i = 0; i < NUM_OF_CHROMOSOME; i++){
 		printf(" %d ", index_1[0][i]);
 	}
