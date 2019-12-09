@@ -45,7 +45,6 @@ void crossing(){
 		beta[y] = index_1[1][y];
 		pos = y;
 	}
-	// ***** alpha, beta を子の位置に再配置する必要がある *****
 	for(int i = 0 ; i < NUM_OF_CHROMOSOME ; i++){
 		index_1[NUM_OF_GENE -1][i] = alpha[i];
 		index_1[NUM_OF_GENE -2][i] = beta[i];
@@ -77,10 +76,6 @@ void crossing_test(){
 
 int get_index(int num){
 	// 引数numとして与えられた値と同じものを持つindex値を返す
-	// for(i = 0, i < len(alpha[]), i++){
-	// 	if( alpha[i] == num)
-	// 		return i
-	// }
 	for ( int i = 0; i < NUM_OF_CHROMOSOME; i++){
 		if( index_1[0][i] == num){
 			return i;
