@@ -278,22 +278,8 @@ int mutating(void){
 		int b = return_rand(NUM_OF_CHROMOSOME);
 		int c = return_rand(NUM_OF_GENE);
 		int tmp = index_1[c][a];
-#ifdef DEBUG
-		printf("before mutate index_1[%d] = ",c);
-		for(int i = 0 ; i < NUM_OF_CHROMOSOME ; i++){
-			printf("%d", index_1[c][i]);
-		}
-		printf("\n");
-#endif
 		index_1[c][a] = index_1[c][b];
 		index_1[c][b] = tmp;
-#ifdef DEBUG
-		printf("after mutate index_1[%d] = ",c);
-		for(int i = 0 ; i < NUM_OF_CHROMOSOME ; i++){
-			printf("%d", index_1[c][i]);
-		}
-		printf("\n");
-#endif
 		return true;
 	}
 	else{
