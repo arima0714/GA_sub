@@ -322,7 +322,7 @@ void swap_content(int a, int b){
 // 最初に実行される全ての配列(array_1 ~ _4)にroot_arrayの内容をコピーする
 void init(){
 	input_root_array();
-	init_indexes();
+	init_indexes(NUM_OF_GENE, NUM_OF_CHROMOSOME, index_1, root_array);
 	init_mutate();
 	srand((unsigned)time(NULL));
 }
@@ -336,7 +336,7 @@ void print_array(int* array){
 }
 
 // インデックスに親配列を全代入する
-void init_indexes(void){
+void init_indexes_(void){
 	for(int i = 0; i < NUM_OF_GENE; i++){
 		for(int j = 0; j < NUM_OF_CHROMOSOME; j++){
 			index_1[i][j] = root_array[j];
