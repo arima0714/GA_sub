@@ -362,15 +362,16 @@ int main(int argc, char *argv[]){
 		crossing();
 		mutating();
 
-#ifndef DEMO
-		// 結果を出力
-		printf("n = %d ", n);
-		printf("result = ");
-		for(int i = 0; i < NUM_OF_CHROMOSOME; i++){
-			printf(" %d ", index_1[0][i]);
+		// 途中経過を出力
+		if(GEN < 100000 || ( (n % (GEN / 10)) == 0)){
+			printf("n = %d ", n);
+			printf("result = ");
+			for(int i = 0; i < NUM_OF_CHROMOSOME; i++){
+				printf(" %d ", index_1[0][i]);
+			}
+			printf("\n");
 		}
-		printf("\n");
-#endif
+
 	}
 	
 	printf("after  =");
