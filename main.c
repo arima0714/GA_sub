@@ -352,7 +352,7 @@ int main(int argc, char *argv[]){
 
 	printf("before =");
 	for(int i = 0; i < NUM_OF_CHROMOSOME; i++){
-		printf(" %d ", index_1[0][i]);
+		printf(" %d ", root_array[i]);
 	}
 	printf("\n");
 
