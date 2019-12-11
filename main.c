@@ -335,59 +335,6 @@ void print_array(int* array){
 	printf("\n");
 }
 
-// インデックスに親配列を全代入する
-void init_indexes_(void){
-	for(int i = 0; i < NUM_OF_GENE; i++){
-		for(int j = 0; j < NUM_OF_CHROMOSOME; j++){
-			index_1[i][j] = root_array[j];
-		}
-	}
-}
-
-// インデックスの要素すべてを突然変異させる関数
-int init_mutate_(void){
-	int a = 0;
-	int b = 0;
-	int tmp = 0;
-	for(int i = 0; i < NUM_OF_GENE; i++){
-		while(a == b){
-			a = return_rand(NUM_OF_CHROMOSOME);
-			b = return_rand(NUM_OF_CHROMOSOME);
-		}
-#ifdef DEBUG
-		printf("before index_1[%d][%d] = %d, index_1[%d][%d] = %d\n",i,a,index_1[i][a], i,b,index_1[i][b]);
-#endif
-		tmp = index_1[i][a];
-		index_1[i][a] = index_1[i][b];
-		index_1[i][b] = tmp;
-#ifdef DEBUG
-		printf("after  index_1[%d][%d] = %d, index_1[%d][%d] = %d\n",i,a,index_1[i][a], i,b,index_1[i][b]);
-#endif
-		a = 0;
-		b = 0;
-	}
-
-#ifdef DEBUG
-	for(int i = 0 ; i < NUM_OF_GENE ; i++){
-		printf("index_1[%d][] = ", i);
-		for(int j = 0 ; j < NUM_OF_CHROMOSOME ; j++){
-			printf(" %d ", index_1[i][j]);
-		}
-		printf(" \n");
-	}
-#endif
-}
-
-// ソートしたい配列そのものを初期化する関数
-void input_root_array_(void){
-	root_array[0] = 6;
-	root_array[1] = 5;
-	root_array[2] = 4;
-	root_array[3] = 3;
-	root_array[4] = 2;
-	root_array[5] = 1;
-}
-
 int main(int argc, char *argv[]){
 
 #ifdef TEST
