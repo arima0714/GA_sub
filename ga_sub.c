@@ -1,8 +1,4 @@
-#include <stdio.h>
-#include <stdbool.h>
 #include "ga_sub.h"
-#include <stdlib.h>
-#include <time.h>
 
 static unsigned long int next = 1;
 
