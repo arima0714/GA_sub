@@ -1,5 +1,4 @@
 void init();
-void print_array(int* array);
 int return_rand(int num);
 void calc_fitness(void);
 void xselect(void);

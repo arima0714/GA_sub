@@ -318,8 +318,7 @@ void swap_content(int a, int b){
 	}
 }
 
-// root_arrayに値を入れる
-// 最初に実行される全ての配列(array_1 ~ _4)にroot_arrayの内容をコピーする
+// 初期化関数
 void init(){
 	input_root_array(NUM_OF_CHROMOSOME, root_array);
 	init_indexes(NUM_OF_GENE, NUM_OF_CHROMOSOME, index_1, root_array);
@@ -327,13 +326,6 @@ void init(){
 	srand((unsigned)time(NULL));
 }
 
-// 遺伝子に内蔵された要素を全て出力する関数
-void print_array(int* array){
-	for(int i = 0; i < NUM_OF_CHROMOSOME; i++){
-		printf(" %d ",array[i]);
-	}
-	printf("\n");
-}
 
 int main(int argc, char *argv[]){
 
