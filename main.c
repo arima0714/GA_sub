@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include "ga_sub.h"
+#include "test.h"
 #include <stdlib.h>
 #include <time.h>
 
