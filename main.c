@@ -4,61 +4,40 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define NUM_OF_GENE 4	// 生存可能な数の上限
+#define NUM_OF_GENE 4		// 生存可能な数の上限
 #define NUM_OF_CHROMOSOME 6	// 各遺伝子が保有する染色体の数 // 並び替える値の個数
-#define RAND 70		// 突然変異の発生確率(%)
-#define GENERATION 10000000// 世代交代の上限値
-
-int GEN = 0;
+#define RAND 70			// 突然変異の発生確率(%)
+#define GENERATION 10000000	// 世代交代の上限値
 
 int index_1[NUM_OF_GENE][NUM_OF_CHROMOSOME +1];
-
-int array_1[NUM_OF_CHROMOSOME +1];
-int array_2[NUM_OF_CHROMOSOME +1];
-int array_3[NUM_OF_CHROMOSOME +1];
-int array_4[NUM_OF_CHROMOSOME +1];
 
 int root_array[NUM_OF_CHROMOSOME];	// ソートしたい配列
 
 static unsigned long int next = 1;
 
 int return_rand(int num){
-	// 実行時期が限りなく近いときに返値がバラバラにする必要がある
 	next = next *1103515245+12345;
 	return (unsigned int)(next / 65536) % 32768 % num;
 }
 
 // 交叉		TEST
 void crossing(){
-	// 位置をランダムに決める
 	int pos = return_rand(NUM_OF_CHROMOSOME);
-	// alpha', beta' に beta, alpha の内容をコピーする
 	int alpha[NUM_OF_CHROMOSOME];
 	int beta[NUM_OF_CHROMOSOME];
 	for(int i = 0 ; i < NUM_OF_CHROMOSOME; i++){
 		alpha[i] = index_1[0][i];
 		beta[i] = index_1[1][i];
 	}
-	// alpha'[x] = alpha[x]
 	alpha[pos] = index_1[0][pos];
-	// beta'[x] = beta[x]
 	beta[pos] = index_1[1][pos];
-	// int fix = alpha[x]
 	int fix = index_1[0][pos];
-	// while (fix != beta[x]){
-	// 	beta[x] == alpha[y] となる y を探す
-	// 	***** 下記のget_index(int num)を使用する*****
-	// 	alpha'[y] = alpha[y]
-	// 	beta'[y] = beta[y]
-	// 	x = y
-	// }
 	while(fix != index_1[1][pos]){
 		int y = get_index(index_1[1][pos]);
 		alpha[y] = index_1[0][y];
 		beta[y] = index_1[1][y];
 		pos = y;
 	}
-	// ***** alpha, beta を子の位置に再配置する必要がある *****
 	for(int i = 0 ; i < NUM_OF_CHROMOSOME ; i++){
 		index_1[NUM_OF_GENE -1][i] = alpha[i];
 		index_1[NUM_OF_GENE -2][i] = beta[i];
@@ -90,10 +69,6 @@ void crossing_test(){
 
 int get_index(int num){
 	// 引数numとして与えられた値と同じものを持つindex値を返す
-	// for(i = 0, i < len(alpha[]), i++){
-	// 	if( alpha[i] == num)
-	// 		return i
-	// }
 	for ( int i = 0; i < NUM_OF_CHROMOSOME; i++){
 		if( index_1[0][i] == num){
 			return i;
@@ -420,7 +395,11 @@ int main(int argc, char *argv[]){
 	return 0;
 #endif
 	int n = 0;
-
+	int GEN = 0;
+	printf("世代数を入力してください >> ");
+	fflush(stdout);
+	scanf("%d", &GEN);
+	
 	init();
 
 	printf("before =");
@@ -429,7 +408,7 @@ int main(int argc, char *argv[]){
 	}
 	printf("\n");
 
-	for(; n < GENERATION; n++){
+	for(; n < GEN; n++){
 		calc_fitness();
 		xselect();
 		crossing();
@@ -451,6 +430,8 @@ int main(int argc, char *argv[]){
 		printf(" %d ", index_1[0][i]);
 	}
 	printf("\n");
+
+	fflush(stdout);
 
 	return 0;
 }
