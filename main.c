@@ -9,8 +9,6 @@
 #define RAND 70			// 突然変異の発生確率(%)
 #define GENERATION 10000000	// 世代交代の上限値
 
-int GEN = 0;
-
 int index_1[NUM_OF_GENE][NUM_OF_CHROMOSOME +1];
 
 int root_array[NUM_OF_CHROMOSOME];	// ソートしたい配列
@@ -397,6 +395,7 @@ int main(int argc, char *argv[]){
 	return 0;
 #endif
 	int n = 0;
+	int GEN = 0;
 	printf("世代数を入力してください >> ");
 	fflush(stdout);
 	scanf("%d", &GEN);
