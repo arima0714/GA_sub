@@ -355,7 +355,7 @@ int main(int argc, char *argv[]){
 
 #ifndef DEMO
 		// 結果を出力
-		printf("n = %d\n", n);
+		printf("n = %d ", n);
 		printf("result = ");
 		for(int i = 0; i < NUM_OF_CHROMOSOME; i++){
 			printf(" %d ", index_1[0][i]);
