@@ -323,7 +323,7 @@ void swap_content(int a, int b){
 void init(){
 	input_root_array(NUM_OF_CHROMOSOME, root_array);
 	init_indexes(NUM_OF_GENE, NUM_OF_CHROMOSOME, index_1, root_array);
-	init_mutate();
+	init_mutate(NUM_OF_GENE, NUM_OF_CHROMOSOME, index_1);
 	srand((unsigned)time(NULL));
 }
 
@@ -345,7 +345,7 @@ void init_indexes_(void){
 }
 
 // インデックスの要素すべてを突然変異させる関数
-int init_mutate(void){
+int init_mutate_(void){
 	int a = 0;
 	int b = 0;
 	int tmp = 0;
