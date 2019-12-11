@@ -13,11 +13,6 @@ int GEN = 0;
 
 int index_1[NUM_OF_GENE][NUM_OF_CHROMOSOME +1];
 
-int array_1[NUM_OF_CHROMOSOME +1];
-int array_2[NUM_OF_CHROMOSOME +1];
-int array_3[NUM_OF_CHROMOSOME +1];
-int array_4[NUM_OF_CHROMOSOME +1];
-
 int root_array[NUM_OF_CHROMOSOME];	// ソートしたい配列
 
 static unsigned long int next = 1;
