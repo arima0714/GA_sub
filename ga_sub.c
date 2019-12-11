@@ -17,7 +17,7 @@ void init_indexes(int NOG, int NOC, int index[NOG][NOC], int root_array[NOC]){
 }
 
 // インデックスの要素すべてを突然変異させる関数
-int init_mutate(int NOG, int NOC, int index[NOG][NOC]){
+void init_mutate(int NOG, int NOC, int index[NOG][NOC]){
 	int a = 0;
 	int b = 0;
 	int tmp = 0;

@@ -17,4 +17,4 @@ void get_index_test();
 
 void init_indexes(int NOG, int NOC, int index[NOG][NOC], int root_array[NOC]);
 void input_root_array(int NOC, int root_array[NOC]);
-int init_mutate(int NOG, int NOC, int index[NOG][NOC]);
+void init_mutate(int NOG, int NOC, int index[NOG][NOC]);
