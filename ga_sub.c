@@ -19,3 +19,10 @@ void init_indexes(int NOG, int NOC, int index[NOG][NOC], int root_array[NOC]){
 		}
 	}
 }
+
+// 元となる配列を作成
+void input_root_array(int NOC, int root_array[NOC]){
+    for(int i = 0; i < NOC; i++){
+        root_array[i] = NOC - i;
+    }
+}

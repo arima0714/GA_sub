@@ -321,7 +321,7 @@ void swap_content(int a, int b){
 // root_arrayに値を入れる
 // 最初に実行される全ての配列(array_1 ~ _4)にroot_arrayの内容をコピーする
 void init(){
-	input_root_array();
+	input_root_array(NUM_OF_CHROMOSOME, root_array);
 	init_indexes(NUM_OF_GENE, NUM_OF_CHROMOSOME, index_1, root_array);
 	init_mutate();
 	srand((unsigned)time(NULL));
@@ -379,7 +379,7 @@ int init_mutate(void){
 }
 
 // ソートしたい配列そのものを初期化する関数
-void input_root_array(void){
+void input_root_array_(void){
 	root_array[0] = 6;
 	root_array[1] = 5;
 	root_array[2] = 4;
