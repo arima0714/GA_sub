@@ -13,11 +13,11 @@ int index_1[NUM_OF_GENE][NUM_OF_CHROMOSOME +1];
 
 int root_array[NUM_OF_CHROMOSOME];	// ソートしたい配列
 
-static unsigned long int next = 1;
+static unsigned long int next_ = 1;
 
-int return_rand(int num){
-	next = next *1103515245+12345;
-	return (unsigned int)(next / 65536) % 32768 % num;
+int return_rand_(int num){
+	next_ = next_ *1103515245+12345;
+	return (unsigned int)(next_ / 65536) % 32768 % num;
 }
 
 // 交叉		TEST
