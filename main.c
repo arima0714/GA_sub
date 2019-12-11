@@ -117,19 +117,20 @@ void calc_fitness_test(void){
 
 	calc_fitness();
 
-	if(index_1[0][NUM_OF_CHROMOSOME] != 5){
+	if(index_1[0][NUM_OF_CHROMOSOME] != 15){
 		fprintf(stderr, "index_1[0] is bad \n");
+		printf("index_1[0] will be 5 but now, index_1[0] = %d\n", index_1[0][NUM_OF_CHROMOSOME]);
 		exit(1);
 	}
-	if(index_1[1][NUM_OF_CHROMOSOME] != 4){
+	if(index_1[1][NUM_OF_CHROMOSOME] != 10){
 		fprintf(stderr, "index_1[1] is bad \n");
 		exit(1);
 	}
-	if(index_1[2][NUM_OF_CHROMOSOME] != 3){
+	if(index_1[2][NUM_OF_CHROMOSOME] != 9){
 		fprintf(stderr, "index_1[2] is bad \n");
 		exit(1);
 	}
-	if(index_1[3][NUM_OF_CHROMOSOME] != 2){
+	if(index_1[3][NUM_OF_CHROMOSOME] != 3){
 		fprintf(stderr, "index_1[3] is bad \n");
 		exit(1);
 	}
@@ -245,6 +246,9 @@ void test(void){
 	get_index_test();
 	printf("finished\n");
 
+	printf("start init_indexes_test()..... ");
+	init_indexes_test();
+	printf("finished\n");
 	
 	printf("\n\nall tests are finished\n\n");
 }
